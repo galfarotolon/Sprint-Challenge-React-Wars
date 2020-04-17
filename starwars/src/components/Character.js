@@ -5,7 +5,6 @@ import styled from 'styled-components'
 
 ////STYLES//
 
-
 const Container = styled.div
     `
 background-color: #24325FFF;
@@ -15,7 +14,6 @@ margin: 3% auto;
 padding: 2% 0; 
 
 box-shadow: 0 0 50px yellow;
-
 
 `
 const CharName = styled.h1
@@ -30,14 +28,11 @@ const CharName = styled.h1
   text-shadow: 2px 2px 2px #AEFF00;
 `
 
-
 const Image = styled.img
     `
 
 width: 30%;
 `
-
-
 
 const CharInfo = styled.p
     `

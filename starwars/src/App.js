@@ -18,15 +18,18 @@ function App() {
 
 
   const [data, setGetData] = useState([])
-  const [addCount, setAddCount] = useState(0)
-  const [subtractCount, setSubtractCount] = useState(addCount)
-
-
-
+  const [addCount, setAddCount] = useState(1)
 
 
   function addCounter() {
     setAddCount(addCount + 1)
+  }
+
+
+  function subtractCounter() {
+    if (addCount > 1) {
+      setAddCount(addCount - 1)
+    }
   }
 
   useEffect(() => {
@@ -36,6 +39,7 @@ function App() {
       .then(res => {
 
         setGetData(res.data.results)
+        console.log(res.data)
 
 
 
@@ -45,21 +49,27 @@ function App() {
 
       })
 
-  }, [data, addCount])
+  }, [addCount])
 
-
-  const newArr = Object.values(data)
-
-  console.log(newArr)
 
 
   return (
     <div className="App">
       <h1 className="Header">Character Cards</h1>
       <p>Showing page: {addCount}</p>
-      <button onClick={addCounter}>{addCount}</button>
+      <div className="Buttons">
+        <button onClick={subtractCounter}>Previous Page</button>
+        <button onClick={addCounter}>Next Page</button>
+      </div>
+
       <Character character={data} />
 
+      <p>Showing page: {addCount}</p>
+      <div className="Buttons">
+        <button onClick={subtractCounter}>Previous Page</button>
+        <button onClick={addCounter}>Next Page</button>
+
+      </div>
 
     </div>
   )
