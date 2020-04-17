@@ -54,6 +54,8 @@ export default function Character({ character }) {
     console.log(newArr)
 
 
+
+
     return (
 
         <div>
@@ -69,6 +71,7 @@ export default function Character({ character }) {
                             <CharInfo>Gender: {character.gender}</CharInfo>
                             <CharInfo>Homeworld: {character.origin.name}</CharInfo>
                             <CharInfo>Episode Appearances: {character.episode.length}</CharInfo>
+
                         </Container>
                     )
                 })
