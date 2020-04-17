@@ -18,8 +18,10 @@ function App() {
 
 
   const [data, setGetData] = useState([])
-  const [addCount, setAddCount] = useState(1)
+  const [addCount, setAddCount] = useState(0)
   const [subtractCount, setSubtractCount] = useState(addCount)
+
+
 
 
 
@@ -29,7 +31,7 @@ function App() {
 
   useEffect(() => {
 
-    axios.get(`https://rickandmortyapi.com/api/character/?page=1`)
+    axios.get(`https://rickandmortyapi.com/api/character/?page=${addCount}`)
 
       .then(res => {
 
@@ -43,7 +45,7 @@ function App() {
 
       })
 
-  }, [])
+  }, [data, addCount])
 
 
   const newArr = Object.values(data)
@@ -54,7 +56,8 @@ function App() {
   return (
     <div className="App">
       <h1 className="Header">Character Cards</h1>
-
+      <p>Showing page: {addCount}</p>
+      <button onClick={addCounter}>{addCount}</button>
       <Character character={data} />
 
 
