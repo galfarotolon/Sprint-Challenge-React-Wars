@@ -4,6 +4,14 @@
 .Header {
   color: black;
   text-shadow: 1px 1px 5px #fff;
-  font-size: 5rem;
+  font-size: 6rem;
+  font-family: 'Creepster', cursive;
+  letter-spacing: 0.3rem;
+  color: #69C8ECFF;
+
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #005851;
+  text-shadow: 2px 2px 2px #AEFF00;
 }
 /* write your parent styles in here for your App.js */
+

@@ -4,44 +4,49 @@ import styled from 'styled-components'
 
 
 ////STYLES//
-const Title = styled.h1
+
+
+const Container = styled.div
     `
-font-size: 3rem;
+background-color: #24325FFF;
+border: 2px double yellow;
+width: 50%;
+margin: 3% auto;
+padding: 2% 0; 
+
+box-shadow: 0 0 50px yellow;
+
 
 `
-const Date = styled.div
+const CharName = styled.h1
+
+    `
+    font-family: 'Creepster', cursive;
+    letter-spacing: 0.2rem;
+    font-size: 4rem;
+    color: #69C8ECFF;
+    -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #005851;
+  text-shadow: 2px 2px 2px #AEFF00;
+`
+
+
+const Image = styled.img
     `
 
-margin-top: 1%;
-font-style: italic;
+width: 30%;
+`
+
+
+
+const CharInfo = styled.p
+    `
+color: white;
 font-weight: 600;
-margin-bottom: 5%;
-`
-
-const Img = styled.img
-
-    `
-  
-width: 70%;
-`
-
-const Copyright = styled.div
-    `
-margin-top: 1%;
-font-style: italic;
-font-weight: 600;
-margin-bottom: 5%;
+font-size: 1.2rem;
 
 `
 
-const Explanation = styled.div
-    `
-margin-top: 1%;
-line-height: 2;
-padding-bottom: 5%;
-font-weight: 600;
-font-size: 1rem;
-`
 
 //////
 
@@ -54,11 +59,6 @@ export default function Character({ character }) {
     console.log(newArr)
 
 
-    // const img = cardData.hdurl
-    // console.log(img)
-    // console.log(cardData)
-
-
     return (
 
         <div>
@@ -66,13 +66,15 @@ export default function Character({ character }) {
             {
                 newArr.map(character => {
                     return (
-                        <div>
-                            <h1>{character.name}</h1>
-                            <p>{character.status}</p>
-                            <p>{character.gender}</p>
-                            <p>{character.origin.name}</p>
-
-                        </div>
+                        <Container>
+                            <CharName>{character.name}</CharName>
+                            <Image src={character.image} />
+                            <CharInfo>Status: {character.status}</CharInfo>
+                            <CharInfo>Species: {character.species}</CharInfo>
+                            <CharInfo>Gender: {character.gender}</CharInfo>
+                            <CharInfo>Homeworld: {character.origin.name}</CharInfo>
+                            <CharInfo>Episode Appearances: {character.episode.length}</CharInfo>
+                        </Container>
                     )
                 })
             }

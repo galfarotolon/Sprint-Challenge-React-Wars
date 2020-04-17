@@ -34,7 +34,7 @@ function App() {
       .then(res => {
 
         setGetData(res.data.results)
-        console.log(res.data)
+
 
 
       })
