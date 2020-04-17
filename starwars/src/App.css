@@ -1,8 +1,30 @@
 .App {
   text-align: center;
+  margin-bottom: 5%;
 }
 .Header {
-  color: #443e3e;
-  text-shadow: 1px 1px 5px #fff;
+  /* write your parent styles in here for your App.js */
+
+  font-size: 6rem;
+  font-family: 'Creepster', cursive;
+  letter-spacing: 0.3rem;
+  color: #69C8ECFF;
+
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #005851;
+  text-shadow: 2px 2px 2px #AEFF00;
 }
-/* write your parent styles in here for your App.js */
+
+.Buttons{
+  width: 50%;
+  margin: 0 auto;
+ display: flex;
+ justify-content: space-between;
+}
+
+p{
+  color: white;
+font-weight: 600;
+font-size: 1rem;
+}
+
