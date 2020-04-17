@@ -43,7 +43,7 @@ const CharInfo = styled.p
     `
 color: white;
 font-weight: 600;
-font-size: 1.2rem;
+font-size: 1rem;
 
 `
 
